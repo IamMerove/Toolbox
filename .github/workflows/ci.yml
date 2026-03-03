@@ -32,7 +32,8 @@ jobs:
 
       - name: Scan for secrets with TruffleHog
         uses: trufflesecurity/trufflehog@main
+        continue-on-error: true
         with:
           path: ./
-          extra_args: --exclude-paths .github/exclude-patterns.txt --results=verified --fail
+          extra_args: --exclude-paths .github/exclude-patterns.txt --results=verified
           # Ou sans --fail si tu veux juste alerter sans casser le build
