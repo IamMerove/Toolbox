@@ -1,5 +1,6 @@
 import os
 import sys
+
 # On indique à Sphinx où se trouve le code source
 sys.path.insert(0, os.path.abspath('../../'))
 sys.path.insert(0, os.path.abspath('../../app'))

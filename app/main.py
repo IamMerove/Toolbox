@@ -1,13 +1,15 @@
 import pandas as pd
 from modules.mon_module import add, print_data
 
+
 def run():
+    """ON lance le truc."""
     print("--- Démarrage de la Toolbox ---")
-    
+
     # 1. Test des fonctions mathématiques
     result = add(10, 5)
     print(f"Test calcul : 10 + 5 = {result}")
-    
+
     # 2. Test du traitement de données
     try:
         df = pd.read_csv("app/moncsv.csv")
