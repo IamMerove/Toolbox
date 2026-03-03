@@ -1,0 +1,39 @@
+name: Deploy Sphinx Documentation
+
+on:
+  push:
+    branches: [main] # Se lance uniquement lors d'un push sur main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Set up Python
+        run: uv python install
+
+      - name: Install dependencies
+        run: uv sync --group dev # Installe sphinx et furo
+
+      - name: Build Documentation
+        run: |
+          # On définit le PYTHONPATH pour que Sphinx trouve 'app'
+          PYTHONPATH=. uv run sphinx-build -b html docs/source/ docs/build/html
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/build/html
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
