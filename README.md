@@ -1,6 +1,3 @@
-Voici une version finale et professionnelle de ton `README.md`, structurée exactement selon ton arborescence actuelle et les exigences strictes de ton cours.
-
-### Le `README.md` à copier :
 
 ```markdown
 # 🛠 Toolbox Project

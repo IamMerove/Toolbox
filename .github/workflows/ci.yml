@@ -31,8 +31,7 @@ jobs:
         run: PYTHONPATH=. uv run pytest
 
       - name: Security Audit (Secret Scanning)
-        # On utilise directement l'image Docker pour éviter les soucis de résolution d'action
         uses: docker://trufflesecurity/trufflehog:latest
         with:
-          # On scanne le dossier actuel en mode "filesystem" sans chercher de comparaison git
-          args: filesystem --directory=./ --fail
+          # On scanne la racine mais en excluant les dossiers de dépendances et de cache
+          args: filesystem --directory=./ --exclude-paths=.github/exclude-patterns.txt --fail
