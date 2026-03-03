@@ -33,5 +33,5 @@ jobs:
       - name: Security Audit (Secret Scanning)
         uses: docker://trufflesecurity/trufflehog:latest
         with:
-          # On scanne la racine mais en excluant les dossiers de dépendances et de cache
-          args: filesystem --directory=./ --exclude-paths=.github/exclude-patterns.txt --fail
+          # On scanne le dossier actuel (.) mais on exclut .venv et .git
+          args: filesystem --fail --exclude-paths=.venv,.git .
