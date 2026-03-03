@@ -1,10 +1,12 @@
-import pytest
 import pandas as pd
-from app.modules.mon_module import add, sub, square, print_data
+import pytest
+
+from app.modules.mon_module import add, print_data, square, sub
+
 
 #1. La Paramétrisation (pour les fonctions mathématiques)
-#Au lieu d'écrire trois fonctions pour tester add, on en écrit une seule qui reçoit une liste de scénarios.
-# On test plusieurs cas (positifs, negatifs, zero) en une seule fois
+#Au lieu d'écrire trois fonctions pour tester add, on en écrit une seule.
+# On test plusieurs cas (positifs, negatifs, zero) en une seule fois.
 @pytest.mark.parametrize("a,b, expected", [
     (10, 2, 12),
     (20, 2, 22),
@@ -13,17 +15,20 @@ from app.modules.mon_module import add, sub, square, print_data
 ])
 
 def test_add_parametrized(a, b, expected):
+    """Addition."""
     assert add(a,b) == expected
 
 def test_sub():
+    """Soustraction."""
     assert sub(10, 5) == 5
 
 def test_square():
+    """C'est carré."""
     assert square(4) == 16
 
 
 #2. La Fixture (pour le test de DataFrame)
-#Le TP précise : ne pas lire le vrai fichier CSV. Pourquoi ? Parce qu'un test doit être rapide et ne pas dépendre d'un fichier externe qui pourrait être supprimé.
+#rapide et ne pas dépendre d'un fichier externe qui pourrait être supprimé.
 #On crée une Fixture : une fonction qui prépare des données "jetables" pour le test
 
 @pytest.fixture
