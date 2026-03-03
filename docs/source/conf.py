@@ -11,7 +11,7 @@ copyright = '2026, seb'
 author = 'seb'
 release = 'mark1'
 
-extensions = []
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon']
 
 templates_path = ['_templates']
 exclude_patterns = []

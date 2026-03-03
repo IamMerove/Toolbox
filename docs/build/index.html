@@ -37,6 +37,85 @@
 <p>Add your content using <code class="docutils literal notranslate"><span class="pre">reStructuredText</span></code> syntax. See the
 <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">reStructuredText</a>
 documentation for details.</p>
+<p>Voici une version finale et professionnelle de ton <code class="docutils literal notranslate"><span class="pre">README.md</span></code>, structurée exactement selon ton arborescence actuelle et les exigences strictes de ton cours.</p>
+<section id="le-readme-md-a-copier">
+<h2>Le <code class="docutils literal notranslate"><span class="pre">README.md</span></code> à copier :<a class="headerlink" href="#le-readme-md-a-copier" title="Link to this heading">¶</a></h2>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># 🛠 Toolbox Project</span>
+
+![<span class="nt">CI Status</span>](<span class="na">https://github.com/IamMerove/Toolbox/actions/workflows/ci.yml/badge.svg</span>)
+![<span class="nt">Coverage</span>](<span class="na">https://img.shields.io/badge/coverage-100%25-brightgreen</span>)
+
+Une boîte à outils Python industrialisée avec une pipeline CI complète, des tests automatisés et une conteneurisation Docker.
+
+---
+
+<span class="gu">## 🏗 Structure du Projet</span>
+```plaintext
+.
+├── .github/                # Configuration CI, Contributing et Code of Conduct
+├── app/                    # Code source et modules métier
+├── docs/                   # Documentation du projet
+├── tests/                  # Tests unitaires et d&#39;intégration
+├── .coverage               # Rapport de couverture de tests
+├── Dockerfile              # Configuration du conteneur
+├── pyproject.toml          # Gestion des dépendances (uv)
+├── uv.lock                 # Lockfile des dépendances
+└── README.md
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="installation-usage">
+<h2>🚀 Installation &amp; Usage<a class="headerlink" href="#installation-usage" title="Link to this heading">¶</a></h2>
+<section id="avec-uv-recommande">
+<h3>Avec <code class="docutils literal notranslate"><span class="pre">uv</span></code> (Recommandé)<a class="headerlink" href="#avec-uv-recommande" title="Link to this heading">¶</a></h3>
+<p>Ce projet utilise <code class="docutils literal notranslate"><span class="pre">uv</span></code> pour une gestion moderne des environnements Python.</p>
+<ol class="arabic simple">
+<li><p><strong>Synchronisation</strong> de l’environnement :</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>sync
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Exécution</strong> de l’application :</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>app/main.py
+</pre></div>
+</div>
+</section>
+<section id="avec-docker">
+<h3>Avec Docker<a class="headerlink" href="#avec-docker" title="Link to this heading">¶</a></h3>
+<p>Pour une exécution isolée :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>toolbox-final<span class="w"> </span>.
+docker<span class="w"> </span>run<span class="w"> </span>toolbox-final
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+</section>
+<section id="qualite-automatisation-ci">
+<h2>🧪 Qualité &amp; Automatisation (CI)<a class="headerlink" href="#qualite-automatisation-ci" title="Link to this heading">¶</a></h2>
+<p>Le “Juge de Paix” GitHub Actions exécute automatiquement les étapes suivantes à chaque push sur <code class="docutils literal notranslate"><span class="pre">main</span></code> ou <code class="docutils literal notranslate"><span class="pre">dev</span></code> :</p>
+<ol class="arabic simple">
+<li><p><strong>Linting</strong> : Validation du style de code avec <code class="docutils literal notranslate"><span class="pre">ruff</span></code>.</p></li>
+<li><p><strong>Tests</strong> : Exécution des tests unitaires avec <code class="docutils literal notranslate"><span class="pre">pytest</span></code>.</p></li>
+<li><p><strong>Sécurité</strong> : Audit des secrets avec <code class="docutils literal notranslate"><span class="pre">trufflehog</span></code>.</p></li>
+</ol>
+<hr class="docutils" />
+</section>
+<section id="communaute">
+<h2>🤝 Communauté<a class="headerlink" href="#communaute" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Contributions</strong> : Voir le guide <a class="reference external" href="https://www.google.com/search?q=.github/CONTRIBUTING.md">CONTRIBUTING.md</a>.</p></li>
+<li><p><strong>Code de conduite</strong> : Voir <a class="reference external" href="https://www.google.com/search?q=.github/CODE_OF_CONDUCT.md">CODE_OF_CONDUCT.md</a>.</p></li>
+<li><p><strong>Contributeurs</strong> : Sébastien GARCONNET.</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="licence">
+<h2>📜 Licence<a class="headerlink" href="#licence" title="Link to this heading">¶</a></h2>
+<p>Ce projet est sous licence <strong>MIT</strong>.</p>
+</section>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
@@ -46,7 +125,10 @@ documentation for details.</p>
 <li class="toctree-l2"><a class="reference internal" href="modules.html#module-modules">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main.html">main module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="main.html#main.run"><code class="docutils literal notranslate"><span class="pre">run()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
