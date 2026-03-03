@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Install uv
         uses: astral-sh/setup-uv@v3
@@ -29,9 +31,8 @@ jobs:
         run: PYTHONPATH=. uv run pytest
 
       - name: Security Audit (Secret Scanning)
-        uses: trufflesecurity/trufflehog@main
+        # On utilise directement l'image Docker pour éviter les soucis de résolution d'action
+        uses: docker://trufflesecurity/trufflehog:latest
         with:
-          path: ./
-          base: ${{ github.event.repository.default_branch }}
-          head: HEAD
-          extra_args: --debug --only-verified
+          # On scanne le dossier actuel en mode "filesystem" sans chercher de comparaison git
+          args: filesystem --directory=./ --fail
