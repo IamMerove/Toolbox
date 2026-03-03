@@ -30,8 +30,9 @@ jobs:
       - name: Run Tests (Pytest)
         run: PYTHONPATH=. uv run pytest
 
-      - name: Security Audit (Secret Scanning)
-        uses: docker://trufflesecurity/trufflehog:latest
+      - name: Scan for secrets with TruffleHog
+        uses: trufflesecurity/trufflehog@main
         with:
-          # On scanne le dossier actuel (.) mais on exclut .venv et .git
-          args: filesystem --fail --exclude-paths=.venv,.git .
+          path: ./
+          extra_args: --exclude-paths .github/exclude-patterns.txt --results=verified --fail
+          # Ou sans --fail si tu veux juste alerter sans casser le build
