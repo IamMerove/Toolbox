@@ -2,8 +2,6 @@
 ```markdown
 # 🛠 Toolbox Project
 
-![CI Status](https://github.com/IamMerove/Toolbox/actions/workflows/ci.yml/badge.svg)
-![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
 
 Une boîte à outils Python industrialisée avec une pipeline CI complète, des tests automatisés et une conteneurisation Docker.
 

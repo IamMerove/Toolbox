@@ -6,9 +6,19 @@
 Mega giga toolbox
 =====================
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
+.. image:: https://github.com/IamMerove/Toolbox/actions/workflows/ci.yml/badge.svg?branch=main
+   :target: https://github.com/IamMerove/Toolbox/actions/workflows/ci.yml
+   :alt: Statut de la CI
+   :align: left
+
+.. image:: https://img.shields.io/badge/coverage-100%25-brightgreen
+   :target: https://github.com/IamMerove/Toolbox
+   :alt: Couverture des tests
+   :align: left
+
+.. raw:: html
+
+   <br clear="all">
 
 .. include:: ../../README.md
    :parser: myst_parser.sphinx_

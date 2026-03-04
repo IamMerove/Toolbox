@@ -35,5 +35,5 @@ jobs:
         continue-on-error: true
         with:
           path: ./
-          extra_args: --exclude-paths .github/exclude-patterns.txt --results=verified
+          extra_args: --exclude-paths .github/exclude-patterns.txt --only-verified
           # Ou sans --fail si tu veux juste alerter sans casser le build
